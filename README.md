@@ -1,2 +1,2 @@
 # grunt-imagemin
-A starter grunt project to optimize images.
+A starter Grunt setup to optimize images (JPGs, JPGEs, GIFs and PNGs).

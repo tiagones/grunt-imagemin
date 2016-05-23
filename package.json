@@ -2,7 +2,7 @@
   "name": "grunt-imagemin",
   "version": "0.0.0",
   "author": "Tiago P Dantas",
-  "description": "A starter grunt project to optimize images.",
+  "description": "A starter Grunt setup to optimize images (JPGs, JPGEs, GIFs and PNGs)",
   "homepage": "https://github.com/tiagones/grunt-imagemin",
   "main": "Gruntfile.js",
   "repository": {
