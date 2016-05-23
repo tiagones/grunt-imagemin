@@ -1,0 +1,18 @@
+{
+  "name": "grunt-imagemin",
+  "version": "0.0.0",
+  "author": "Tiago P Dantas",
+  "description": "A starter grunt project to optimize images.",
+  "homepage": "https://github.com/tiagones/grunt-imagemin",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiagones/grunt-imagemin.git"
+  },
+  "license": "",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "imagemin-mozjpeg": "^5.1.0"
+  }
+}
