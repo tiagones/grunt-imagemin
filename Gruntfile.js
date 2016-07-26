@@ -56,14 +56,22 @@ module.exports = function(grunt) {
           dest: 'dest/'
         }]
       }
+    },
+
+    watch: {
+      images: {
+        files: ['src/**/*.*'],
+        tasks: ['newer:imagemin']
+      }
     }
 
   });
 
-  // Load the plugin for image optimization
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-newer');
 
   // Default task(s).
-  grunt.registerTask('default', ['imagemin']);
+  grunt.registerTask('default', ['newer:imagemin']);
 
 }
