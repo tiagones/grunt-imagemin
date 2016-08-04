@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 
     watch: {
       images: {
-        files: ['src/**/*.*'],
+        files: ['src/**/**.*'],
         tasks: ['newer:imagemin']
       }
     }
