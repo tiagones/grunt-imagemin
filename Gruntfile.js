@@ -61,7 +61,10 @@ module.exports = function(grunt) {
     watch: {
       images: {
         files: ['src/**/**.*'],
-        tasks: ['newer:imagemin']
+        tasks: ['newer:imagemin'],
+        options: {
+          atBegin: true
+        }
       }
     }
 
