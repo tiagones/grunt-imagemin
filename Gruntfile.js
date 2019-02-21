@@ -4,17 +4,18 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    //pkg: grunt.file.readJSON('package.json'),
 
     imagemin: {
       jpg: {
         options: {
           use: [
-            imageminMozjpeg({quality: 95, smooth: 1, progressive: true})
+            imageminMozjpeg({quality: 90, smooth: 1, progressive: true})
           ]
         },
         files: [{
           expand: true,
+          flatten: false,
           cwd: 'src/',
           src: ['**/*.{jpg,jpeg}'],
           dest: 'dest/'
