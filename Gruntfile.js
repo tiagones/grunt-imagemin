@@ -59,10 +59,31 @@ module.exports = function(grunt) {
       }
     },
 
+    cwebp: {
+      dynamic: {
+        options: {
+          q: 85
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dest/'
+        }]
+      }
+    },
+
     watch: {
       images: {
-        files: ['src/**/**.*'],
+        files: ['src/**/*.{png,jpg,gif}'],
         tasks: ['newer:imagemin'],
+        options: {
+          atBegin: true
+        }
+      },
+      cwebp: {
+        files: ['src/**/*.{png,jpg,gif}'],
+        tasks: ['newer:cwebp:dynamic'],
         options: {
           atBegin: true
         }
@@ -72,10 +93,13 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-cwebp');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-newer');
 
   // Default task(s).
-  grunt.registerTask('default', ['newer:imagemin']);
+  grunt.registerTask('default', ['newer:imagemin', 'newer:cwebp:dynamic']);
+  grunt.registerTask('img', ['imagemin']);
+  grunt.registerTask('webp', ['cwebp:dynamic']);
 
 }
