@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'src/',
-          src: ['**/*.{png,jpg,gif}'],
+          src: ['**/*.{png,jpg,jpeg}'],
           dest: 'dest/'
         }]
       }
@@ -75,14 +75,14 @@ module.exports = function(grunt) {
 
     watch: {
       images: {
-        files: ['src/**/*.{png,jpg,gif}'],
+        files: ['src/**/*.{png,jpg,jpeg,gif}'],
         tasks: ['newer:imagemin'],
         options: {
           atBegin: true
         }
       },
       cwebp: {
-        files: ['src/**/*.{png,jpg,gif}'],
+        files: ['src/**/*.{png,jpg,jpeg}'],
         tasks: ['newer:cwebp:dynamic'],
         options: {
           atBegin: true
